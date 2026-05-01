@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>29.08 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-blur one"></div>
+<div class="bg-blur two"></div>
+<div class="bg-blur three"></div>
+
+<section class="login-screen" id="loginBox">
+  <div class="login-card">
+    <p class="tag">29.08.2025</p>
+    <h1>Sadece senin için</h1>
+    <p class="desc">
+      Bu sayfanın şifresi bizim hikayemizin başladığı günde saklı.
+    </p>
+
+    <div class="password-display" id="passwordDisplay">○○○○</div>
+
+    <div class="keypad">
+      <button onclick="pressNumber('1')">1</button>
+      <button onclick="pressNumber('2')">2</button>
+      <button onclick="pressNumber('3')">3</button>
+      <button onclick="pressNumber('4')">4</button>
+      <button onclick="pressNumber('5')">5</button>
+      <button onclick="pressNumber('6')">6</button>
+      <button onclick="pressNumber('7')">7</button>
+      <button onclick="pressNumber('8')">8</button>
+      <button onclick="pressNumber('9')">9</button>
+      <button class="soft" onclick="clearPassword()">⌫</button>
+      <button onclick="pressNumber('0')">0</button>
+      <button class="enter" onclick="checkPassword()">gir</button>
+    </div>
+
+    <p id="errorText"></p>
+  </div>
+</section>
+
+<main class="main-page" id="mainPage">
+
+  <section class="hero">
+    <div>
+      <h1>Hoş geldin sevgilim</h1>
+      <p>
+        Burası senin bendeki değerini biraz olsun sana anımsatmak için hazırlandı.
+        Çünkü sen benim hayata teşekkür'üm ve iyiki'msin.
+      </p>
+    </div>
+
+    <div class="hero-card">
+      <p>Bugün</p>
+      <h2 id="daysText"></h2>
+      <span>aynı hikayenin içindeyiz</span>
+    </div>
+  </section>
+
+  <section class="section-title">
+    <p>küçük dokunuşlar</p>
+    <h2>Kalplerden birine bas</h2>
+  </section>
+
+  <section class="heart-grid">
+  <div class="heart-card" onclick="openPopup('Günün mesajı', 'Aklımın en özel köşesinde ve kalbimin en güzel yerindesin.')">
+    <div class="heart-shape"><span>💌</span></div>
+    <h3>Günün mesajı</h3>
+  </div>
+
+  <div class="heart-card" onclick="openPopup('Unutursan hatırla ki...', 'En kıymetlimsin.')">
+    <div class="heart-shape"><span>❤️</span></div>
+    <h3>Unutursan hatırla ki...</h3>
+  </div>
+
+  <div class="heart-card" onclick="openPopup('İçimden geçen', 'Seni sevmek benim için sadece güzel sözler söylemek değil; seni düşünmek, seni özlemek ve sen yanımda değilken de seninle bu hayatı sürdürüyor olmak demek.')">
+    <div class="heart-shape"><span>🌙</span></div>
+    <h3>İçimden geçen</h3>
+  </div>
+
+  <div class="heart-card" onclick="openPopup('Sürpriz', 'Hayatımın aşkı olduğunu bil. ')">
+    <div class="heart-shape"><span>🎁</span></div>
+    <h3>Sürpriz</h3>
+  </div>
+</section>
+  </section>
+
+<section class="music-section">
+  <p class="tag">bizim şarkılarımız</p>
+  <h2>Bir şarkı açalım mı?</h2>
+  <p>Bu butona basınca senin için listeden rastgele bir şarkı seçilecek.</p>
+
+  <div class="music-card" onclick="playRandomSong()">
+  <div class="music-icon">🎧</div>
+  <div class="music-text">
+    <h3>Bizim şarkılarımız</h3>
+    <p>dokun ve rastgele bir şarkı çalsın</p>
+  </div>
+</div>
+
+<div id="musicPlayer"></div>
+</section>
+
+  
+  <section class="note-section">
+  <p class="tag">küçük bir not</p>
+  <h2>Sana söylemek istediğim bir şey var</h2>
+
+  <div class="note-card" onclick="openNotePopup()">
+    <div class="note-icon">💌</div>
+    <div>
+      <h2>Mektubu aç</h2>
+      
+    </div>
+  </div>
+</section>
+
+    <section class="poem-section">
+  <p class="tag">aklımda en çok bu şiir dönüp durdu seni düşündükçe:</p>
+ 
+
+  <button class="poem-open-card" onclick="openPoemPopup()" type="button">
+  <div class="poem-icon">📖</div>
+  <div>
+    <h3>Nimettensin</h3>
+    <p>Cahit Sıtkı Tarancı</p>
+  </div>
+</button>
+</section>
+    <section class="gallery-section">
+    <div class="section-title">
+      <p>bizden kareler</p>
+      <h2>Fotoğraftan daha fazlası</h2>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="foto1.jpeg" alt="biz">
+        <figcaption>seninle yenen tüm yemekler daha bir tatlı</figcaption>
+      </figure>
+
+      <figure>
+        <img src="foto2.jpeg" alt="biz">
+        <figcaption>kokunla uyuduğum en kıymetli gecelerimizden biri</figcaption>
+      </figure>
+
+      <figure>
+        <img src="foto3.jpeg" alt="biz">
+        <figcaption>gün ışığı tamamen senin gülüşünde saklı</figcaption>
+      </figure>
+
+      <figure>
+        <img src="foto4.jpeg" alt="biz">
+        <figcaption>öpücüğün kalbimde çiçek açtırıyor</figcaption>
+      </figure>
+
+      <figure>
+         <img src="foto5.jpeg" alt="biz">
+        <figcaption>en güvenli yerim, senin yanın</figcaption>
+      </figure>
+
+    </div>
+    </section>
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box">
+    <button class="close-popup" onclick="closePopup()">×</button>
+    <p class="tag">sana küçük bir not</p>
+    <h2 id="popupTitle">Mesaj</h2>
+    <p id="popupMessage"></p>
+  </div>
+</div>
+
+<div class="music-popup" id="musicPopup">
+  <div class="music-popup-box">
+
+    <button class="close-player" onclick="closeMusic()">✕</button>
+
+    <iframe
+      id="youtubePlayer"
+      width="560"
+      height="315"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  
+    </div>
+</main>
+<div class="note-popup-overlay" id="notePopup">
+  <div class="note-popup-box">
+
+    <button class="close-popup" onclick="closeNotePopup()">×</button>
+
+    <p class="tag">küçük bir not</p>
+    <h2>Sana söylemek istediğim şey</h2>
+
+    <div class="note-text">
+      <p>
+        Bazen sevgimi tam gösteremiyor, bazen seni ne kadar
+        önemsediğimi yeterince belli edemiyor olabilirim.
+      </p>
+
+      <p>
+        Ama bu bende hiçbir şeyin azaldığı anlamına gelmez.
+        Sen benim bir tanemsin.
+      </p>
+
+      <p>
+        Ve bu sayfayı da biraz bunu göstermek için yaptım.
+        Seni düşündüm ve içimden geçenleri
+        küçük küçük buraya sakladım.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="poem-popup-overlay" id="poemPopup">
+  <div class="poem-popup-box">
+    <button class="close-popup" onclick="closePoemPopup()">×</button>
+
+    <p class="tag">Cahit Sıtkı Tarancı</p>
+    <h2>Nimettensin</h2>
+
+  <div class="poem-text">
+  <p>
+    Desem ki vakitlerden bir Nisan akşamıdır,<br>
+    Rüzgârların en ferahlatıcısı senden esiyor,<br>
+    Sende seyrediyorum denizlerin en mavisini,<br>
+    Ormanların en kuytusunu sende gezmekteyim,<br>
+    Senden kopardım çiçeklerin en solmazını,<br>
+    Toprakların en bereketlisini sende sürdüm,<br>
+    Sende tattım yemişlerin cümlesini.
+  </p>
+
+  <p>
+    Desem ki sen benim için,<br>
+    Hava kadar lazım,<br>
+    Ekmek kadar mübarek,<br>
+    Su gibi aziz bir şeysin;<br>
+    Nimettensin, nimettensin!<br>
+    Desem ki...<br>
+    İnan bana sevgilim inan,<br>
+    Evimde şenliksin, bahçemde bahar;<br>
+    Ve soframda en eski şarap.<br>
+    Ben sende yaşıyorum,<br>
+    Sen bende hüküm sürmektesin.<br>
+    Bırak ben söyleyeyim güzelliğini,<br>
+    Rüzgârlarla, nehirlerle, kuşlarla beraber.
+  </p>
+
+  <p>
+    Günlerden sonra bir gün,<br>
+    Şayet sesimi farkedemezsen,<br>
+    Rüzgârların, nehirlerin, kuşların sesinden,<br>
+    Bil ki ölmüşüm.<br>
+    Fakat yine üzülme, müsterih ol;<br>
+    Kabirde böceklere ezberletirim güzelliğini,<br>
+    Ve neden sonra<br>
+    Tekrar duyduğun gün sesimi gökkubbede,<br>
+    Hatırla ki mahşer günüdür<br>
+    Ortalığa düşmüşüm seni arıyorum.
+  </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
